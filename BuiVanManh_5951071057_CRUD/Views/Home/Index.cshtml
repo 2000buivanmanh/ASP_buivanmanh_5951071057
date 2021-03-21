@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BuiVanManh_5951071057_CRUD.Models.Employee>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sr no</th>
+            <th>EMployee Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Cuontry</th>
+            <th>Departmant</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Srno</td>
+            <td>@item.EmpName</td>
+            <td>@item.City</td>
+            <td>@item.State</td>
+            <td>@item.Country</td>
+            <td>@item.Departmant</td>
+            <td>
+                <a asp-action="edit" asp-route-id="@item.Srno">Edit</a>
+                <a asp-action="edit" asp-route-id="@item.Srno">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
